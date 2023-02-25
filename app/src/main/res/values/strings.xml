@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Taller 1 - Desarrollo Movil</string>
+
+    <array name="language">
+        <item>English</item>
+        <item>Español</item>
+        <item>Français</item>
+        <item>Русский</item>
+        <item>日本</item>
+    </array>
+    <array name="greet">
+        <item>Hi! How are you?</item>
+        <item>Hola, como estas?</item>
+        <item>Bonjour, comment allez-vous?</item>
+        <item>Привет, как дела?</item>
+        <item>こんにちは、元気ですか？</item>
+    </array>
 </resources>

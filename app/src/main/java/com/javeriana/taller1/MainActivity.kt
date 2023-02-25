@@ -15,15 +15,22 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
-        lBinding();
+        bindingGeneral();
 
     }
 
-    fun lBinding(){
+    private fun bindingGeneral(){
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        intentGG()
+        intentGreet()
 
 
+
+
+
+    }
+    private fun intentGG(){
         binding.ggB.setOnClickListener {
 
             if(binding.editTextUpperLimitGG.text.toString().trim().isEmpty()||Integer.parseInt(binding.editTextUpperLimitGG.text.toString())<0||Integer.parseInt(binding.editTextUpperLimitGG.text.toString())>1000){
@@ -40,10 +47,15 @@ class MainActivity : AppCompatActivity() {
             })
         }
 
+    }
 
-
-
-
+    private fun intentGreet(){
+        binding.rgB.setOnClickListener {
+            startActivity(Intent(baseContext,GreetActivity::class.java).apply {
+                putExtra("IndiceL",binding.spinnerLanguage.selectedItemPosition.toString())
+                Log.v("IndiceL", binding.spinnerLanguage.selectedItemPosition.toString())
+            })
+        }
 
     }
 }

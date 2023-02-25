@@ -9,62 +9,87 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/TITULO"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="false"
-        android:layout_centerHorizontal="true"
-        android:text="Taller 1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#03A9F4"
-        android:textFontWeight="1"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-
-    <Button
-        android:id="@+id/ggB"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/TITULO"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="50dp"
-        android:text="Guess Game" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/cB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinnerLanguage"
-        android:layout_centerInParent="true"
-        android:text="countries" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
+            <TextView
+                android:id="@+id/TITULO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:text="Taller 1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#03A9F4"
+                android:textFontWeight="1"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/rgB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextUpperLimitGG"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="random greet" />
+            <Button
+                android:id="@+id/ggB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="50dp"
+                android:text="Guess Game" />
 
-    <EditText
-        android:id="@+id/editTextUpperLimitGG"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_below="@id/ggB"
-        android:ems="10"
-        android:hint="0-1000"
-        android:inputType="number" />
+            <EditText
+                android:id="@+id/editTextUpperLimitGG"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="0-1000"
+                android:inputType="number" />
 
-    <Spinner
-        android:id="@+id/spinnerLanguage"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_below="@id/rgB"
-        android:contentDescription="Listado de pasies" />
+            <Button
+                android:id="@+id/rgB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="random greet" />
+
+            <Spinner
+                android:id="@+id/spinnerLanguage"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:contentDescription="Listado de paises"
+                android:entries="@array/language"
+                android:spinnerMode="dropdown" />
+
+            <Button
+                android:id="@+id/cB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="countries" />
+
+            <Button
+                android:id="@+id/factorialB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Factorial" />
+
+            <EditText
+                android:id="@+id/editTextFact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Ingrese el numero"
+                android:inputType="number"
+                android:minHeight="48dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
