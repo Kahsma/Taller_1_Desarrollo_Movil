@@ -38,7 +38,15 @@ class GuessGameActivity : AppCompatActivity() {
 
         binding.playButton.setOnClickListener {
 
+
+            if(binding.editRespuesta.text.toString().trim().isEmpty()){
+                binding.editRespuesta.error="Ingrese un numero"
+                return@setOnClickListener
+            }
             val elNumero = Integer.parseInt(binding.editRespuesta.text.toString() )
+
+            binding.editRespuesta.text.clear()
+
             if (elNumero < 0 || elNumero > Integer.parseInt(str.trim())){
                 binding.editRespuesta.error = "El numero no obedece al rango"
                 return@setOnClickListener
