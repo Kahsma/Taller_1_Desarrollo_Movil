@@ -13,7 +13,6 @@
         android:id="@+id/TITULO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below=""
         android:layout_centerInParent="false"
         android:layout_centerHorizontal="true"
         android:text="Taller 1"
@@ -59,7 +58,7 @@
         android:layout_below="@id/ggB"
         android:ems="10"
         android:hint="0-1000"
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 
     <Spinner
         android:id="@+id/spinnerLanguage"

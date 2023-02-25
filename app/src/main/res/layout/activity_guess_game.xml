@@ -13,19 +13,19 @@
         android:layout_height="wrap_content"
         android:text="AAAAAAAA"
         android:textColor="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editRespuesta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextPersonName"
+        android:id="@+id/editRespuesta"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Number"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_min="48dp"
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="PLAY"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editRespuesta"
         tools:layout_editor_absoluteX="160dp" />
 
     <TextView
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="-"
         android:textColor="#27FF0F"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playButton" />
@@ -55,7 +55,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="-
+
+"
         android:textColor="#7C4DFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCounter" />
