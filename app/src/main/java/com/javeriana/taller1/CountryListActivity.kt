@@ -3,6 +3,7 @@ package com.javeriana.taller1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import com.javeriana.taller1.databinding.ActivityCountryListBinding
 import com.javeriana.taller1.pojos.Paises
@@ -27,12 +28,14 @@ class CountryListActivity : AppCompatActivity() {
         setContentView(binding.root)
         loadArray()
         //val adapter =ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getNombrePaisList())
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, lPaises.map { it.nombrePais })
+        val adapter =ArrayAdapter<Paises>(this,android.R.layout.simple_list_item_1,lPaises)
+        //val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, lPaises.map { it.nombrePais })
         binding.listView.adapter=adapter
         binding.listView.setOnItemClickListener { parent, view, position, id ->
             val selectedPais = lPaises[position]
             startActivity(Intent(baseContext,CountryActivity::class.java).apply {
                 //put
+                Log.v("NombreP",selectedPais.toString())
                 putExtra("pais", selectedPais)
             })
 

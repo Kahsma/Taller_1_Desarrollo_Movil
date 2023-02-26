@@ -3,16 +3,19 @@ package com.javeriana.taller1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
-import android.view.KeyEvent
-import android.widget.Toast
 import com.javeriana.taller1.databinding.ActivityMainBinding
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    private  var factorialCounter = 0
+    private var factorialCounter = 0
     private var fibonacciCounter = 0
+    private var guessGameCounter = 0
+    private var countriesCounter =0
+    private var randomGreetCounter = 0
+    private var lastCountriesTime =""
+    private var lastGuessGametime=""
+    private var lastRandomGreetTime=""
     private var lastFactorialTime = ""
     private var lastFibonacciTime = ""
 
@@ -49,12 +52,13 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        val counterText = "Factorial: $factorialCounter  $lastFactorialTime\nFibonacci: $fibonacciCounter  $lastFibonacciTime"
+        val counterText = "Guess:$guessGameCounter  $lastGuessGametime\nGreet:$randomGreetCounter  $lastRandomGreetTime\nCountries:$countriesCounter  $lastCountriesTime\nFactorial: $factorialCounter  $lastFactorialTime\nFibonacci: $fibonacciCounter  $lastFibonacciTime"
         binding.textAccesos.text = counterText
     }
     private fun intentGG(){
 
         binding.ggB.setOnClickListener {
+
 
             if(binding.editTextUpperLimitGG.text.toString().trim().isEmpty()||Integer.parseInt(binding.editTextUpperLimitGG.text.toString())<0||Integer.parseInt(binding.editTextUpperLimitGG.text.toString())>1000){
                 binding.editTextUpperLimitGG.error = "Numero invalido "
@@ -62,6 +66,8 @@ class MainActivity : AppCompatActivity() {
                 //Toast.makeText(baseContext,"Numero invalido",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener;
             }
+            guessGameCounter++
+            lastGuessGametime="Ultimo uso: " + Date().toString()
             startActivity(Intent(baseContext, GuessGameActivity::class.java).apply {
                 putExtra("Prompt", binding.editTextUpperLimitGG.text.toString())
             })
@@ -71,6 +77,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun intentGreet(){
         binding.rgB.setOnClickListener {
+            randomGreetCounter++
+            lastRandomGreetTime= "Ultimo uso: " + Date().toString()
             startActivity(Intent(baseContext,GreetActivity::class.java).apply {
                 putExtra("IndiceL",binding.spinnerLanguage.selectedItemPosition.toString())
                 Log.v("IndiceL", binding.spinnerLanguage.selectedItemPosition.toString())
@@ -85,7 +93,7 @@ class MainActivity : AppCompatActivity() {
 
             return@setOnClickListener}
             factorialCounter++
-            lastFactorialTime = "Last Factorial used: " + Date().toString()
+            lastFactorialTime = "Ultimo Uso: " + Date().toString()
             startActivity(Intent(baseContext,FactorialActivity::class.java).apply {
                 putExtra("NumeroOperar",binding.editTextFact.text.toString())
 
@@ -107,7 +115,7 @@ class MainActivity : AppCompatActivity() {
 
                 return@setOnClickListener}
             fibonacciCounter++
-            lastFibonacciTime = "Last Fibonacci used: " + Date().toString()
+            lastFibonacciTime = "Ultimo Uso: " + Date().toString()
             startActivity(Intent(baseContext,FibonacciActivity::class.java).apply {
                 putExtra("NumeroOperar",binding.editTextFact.text.toString())
 
@@ -118,6 +126,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun intentCountries(){
+        countriesCounter++
+        lastCountriesTime = "Ultimo Uso: " + Date().toString()
+
         binding.cB.setOnClickListener {
             startActivity(Intent(baseContext,CountryListActivity::class.java))
         }
