@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         intentGreet()
         intentFact()
         intentFibonacci()
+        intentCountries()
 
 
 
@@ -115,5 +116,11 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+    }
+    private fun intentCountries(){
+        binding.cB.setOnClickListener {
+            startActivity(Intent(baseContext,CountryListActivity::class.java))
+        }
+
     }
 }
