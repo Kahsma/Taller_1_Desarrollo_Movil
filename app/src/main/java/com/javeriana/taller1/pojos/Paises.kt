@@ -7,7 +7,7 @@ class Paises:java.io.Serializable  {
     lateinit var nombrePaisInt:String
     lateinit var sigla:String
     override fun toString(): String {
-        return "$nombrePais"
+        return nombrePais
         //return "Paises(capital='$capital', nombrePais='$nombrePais', nombrePaisInt='$nombrePaisInt', sigla='$sigla')"
     }
 

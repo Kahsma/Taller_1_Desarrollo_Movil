@@ -126,10 +126,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun intentCountries(){
-        countriesCounter++
-        lastCountriesTime = "Ultimo Uso: " + Date().toString()
+
 
         binding.cB.setOnClickListener {
+            countriesCounter++
+            lastCountriesTime = "Ultimo Uso: " + Date().toString()
             startActivity(Intent(baseContext,CountryListActivity::class.java))
         }
 
