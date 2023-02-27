@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.javeriana.taller1.databinding.ActivityCountryBinding
 import com.javeriana.taller1.pojos.Paises
-
-
+import com.squareup.picasso.Picasso
 
 
 class CountryActivity : AppCompatActivity() {
@@ -36,6 +35,7 @@ class CountryActivity : AppCompatActivity() {
         binding.textNomPais.text = pais.nombrePais
         binding.textSigla.text = pais.sigla
         binding.textNomInt.text = pais.nombrePaisInt
+        Picasso.get().load("https://countryflagsapi.com/png/"+pais.sigla).into(binding.imagenPais)
 
     }
 
